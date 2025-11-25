@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>Instal·lació i Administració de Servidors de Transferència d'Arxius - Digitalització aplicada als sectors productius</title>
+<title>Administració de Servidors d'Aplicacions - Digitalització aplicada als sectors productius</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#installacio-i-administracio-de-servidors-de-transferencia-darxius">
+<a class="md-skip" href="#administracio-de-servidors-daplicacions">
           Salta el contingut
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Instal·lació i Administració de Servidors de Transferència d'Arxius
+              Administració de Servidors d'Aplicacions
             
           </span>
 </div>
@@ -159,7 +159,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../03_cloud_system/01-index/">
+<a class="md-nav__link" href="../01-index/">
 <span class="md-ellipsis">
     3. Cloud i sistemes connectats
     
@@ -173,130 +173,113 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="installacio-i-administracio-de-servidors-de-transferencia-darxius">Instal·lació i Administració de Servidors de Transferència d'Arxius</h1>
-<h2 id="1-configuracio-del-servei-de-transferencia-darxius">1. Configuració del servei de transferència d'arxius</h2>
-<p>Un servidor de transferència d’arxius permet enviar i rebre fitxers entre ordinadors a través d’una xarxa utilitzant protocols específics. És un element essencial per publicar contingut web, compartir fitxers amb usuaris o fer còpies de seguretat remotes.</p>
-<p><strong>Protocols habituals:</strong>
-- <strong>FTP (File Transfer Protocol):</strong> protocol antic però encara molt utilitzat; no xifra dades per defecte.
-- <strong>FTPS (FTP Secure):</strong> versió de FTP amb capa de xifrat SSL/TLS.
-- <strong>SFTP (SSH File Transfer Protocol):</strong> utilitza el canal segur d’SSH; més segur i modern que FTP.</p>
+<h1 id="administracio-de-servidors-daplicacions">Administració de Servidors d'Aplicacions</h1>
+<h2 id="1-arquitectura-i-configuracio-basica-del-servidor-daplicacions">1. Arquitectura i configuració bàsica del servidor d'aplicacions</h2>
+<p>Un servidor d’aplicacions és un programari que proporciona un entorn d’execució per a aplicacions web, gestionant la lògica de negoci, l’accés a dades i la comunicació entre clients i altres serveis.</p>
+<p><strong>Característiques principals:</strong>
+- Gestió del cicle de vida de les aplicacions.
+- Suport a diversos llenguatges i frameworks (Java, .NET, PHP...).
+- Connexió amb bases de dades i serveis externs.
+- Capacitat d’escalabilitat i alta disponibilitat.</p>
 <p><strong>Configuració bàsica:</strong>
-- Instal·lar el programari del servidor (ex: vsftpd, ProFTPD, FileZilla Server…).
-- Definir el port de connexió (21 per FTP, 22 per SFTP).
-- Establir el directori arrel o “home” per als usuaris.
-- Activar i configurar el xifrat (TLS/SSL o SSH).
-- Configurar els fitxers principals (<code>vsftpd.conf</code>, <code>proftpd.conf</code>…).</p>
+- Definició de ports i protocols de comunicació (HTTP/HTTPS).
+- Configuració de recursos (pools de connexions, memòria, llindars de CPU).
+- Rutes de desplegament i directoris d’aplicacions.
+- Fitxers de configuració (per exemple: <code>server.xml</code>, <code>domain.xml</code>).</p>
 <hr/>
-<h2 id="2-permisos-i-quotes">2. Permisos i quotes</h2>
-<p>La correcta gestió de permisos i quotes garanteix la seguretat i l’ús eficient dels recursos del servidor.</p>
+<h2 id="2-administrar-aplicacions-web">2. Administrar aplicacions web</h2>
+<p>Tasques habituals d’administració d’aplicacions web en el servidor d’aplicacions:</p>
 <ul>
-<li>Assignar permisos de <strong>lectura (r)</strong>, <strong>escriptura (w)</strong> i <strong>execució (x)</strong> segons cada usuari o grup.</li>
-<li>Utilitzar propietaris i grups de fitxers adequats per evitar accessos indeguts.</li>
-<li>Definir <strong>quotes de disc</strong> per limitar l’espai assignat a cada usuari, evitant saturacions.</li>
-<li>Bloquejar els usuaris dins del seu directori (xarxa tancada o “chroot jail”).</li>
-<li>Monitoritzar els logs per detectar intents d’accés no autoritzats o saturacions.</li>
+<li>Desplegar (pujar i activar) aplicacions empaquetades (<code>.war</code>, <code>.ear</code>, <code>.jar</code>).</li>
+<li>Actualitzar versions existents sense perdre dades ni configuracions.</li>
+<li>Monitoritzar l’estat i rendiment de les aplicacions.</li>
+<li>Aturar, reiniciar o eliminar aplicacions de manera segura.</li>
+<li>Gestionar dependències i biblioteques compartides.</li>
 </ul>
 <hr/>
-<h2 id="3-tipus-dusuaris-i-accessos-al-servei">3. Tipus d'usuaris i accessos al servei</h2>
-<p>Els servidors FTP/SFTP poden treballar amb diferents tipus d’usuaris segons el nivell d’accés requerit:</p>
+<h2 id="3-autenticacio-dusuaris-i-dominis-de-seguretat">3. Autenticació d'usuaris i dominis de seguretat</h2>
+<p>Els servidors d’aplicacions ofereixen mecanismes per validar i autoritzar usuaris:</p>
 <ul>
-<li><strong>Usuaris locals:</strong> creats al sistema operatiu. Fan servir les credencials del sistema i poden tindre accés a més recursos.</li>
-<li><strong>Usuaris virtuals:</strong> gestionats només pel servidor FTP. No existeixen com a usuaris del sistema. Es guarden en fitxers de base de dades o arxius de text.</li>
-<li><strong>Accés anònim:</strong> permet connectar-se sense credencials. Normalment només ofereix accés de lectura a un directori públic.</li>
+<li>Autenticació bàsica (usuari/contrasenya), digest i formularis.</li>
+<li>Integració amb serveis d’identitat (LDAP, Active Directory).</li>
+<li>Definició de dominis o “realms” de seguretat per agrupar usuaris i rols.</li>
+<li>Assignació de permisos i rols per a recursos específics.</li>
 </ul>
+<hr/>
+<h2 id="4-administracio-de-sessions">4. Administració de sessions</h2>
+<p>La sessió representa l’estat de la interacció d’un usuari amb l’aplicació:</p>
+<ul>
+<li>Configurar el temps de vida d’una sessió.</li>
+<li>Almacenar dades de sessió en memòria o en bases de dades.</li>
+<li>Replicar sessions en entorns amb equilibradors de càrrega (cluster).</li>
+<li>Bona pràctica: minimitzar l’ús de sessió i evitar informació sensible.</li>
+</ul>
+<hr/>
+<h2 id="5-cooperacio-amb-servidors-web">5. Cooperació amb servidors web</h2>
+<p>El servidor d’aplicacions pot treballar conjuntament amb un servidor web que actua com a frontal:</p>
+<ul>
+<li>Configurar el servidor web com a proxy invers (per ex. Nginx o Apache).</li>
+<li>Redirigir les peticions dinàmiques al servidor d’aplicacions.</li>
+<li>Servir contingut estàtic des del servidor web per millorar el rendiment.</li>
+<li>Compartir certificats SSL i gestionar el xifrat de connexions.</li>
+</ul>
+<hr/>
+<h2 id="6-desplegament-daplicacions-en-el-servidor-daplicacions">6. Desplegament d'aplicacions en el servidor d'aplicacions</h2>
+<p>Fases del desplegament:</p>
+<ol>
+<li>Preparar el paquet d’aplicació (<code>.war</code>, <code>.ear</code>, <code>.jar</code>).</li>
+<li>Pujar-lo al servidor via consola d’administració, CLI o scripts.</li>
+<li>Assignar els recursos necessaris (connexions a BD, variables d’entorn...).</li>
+<li>Verificar que el desplegament ha sigut correcte i l’aplicació respon.</li>
+</ol>
 <p><strong>Bones pràctiques:</strong>
-- Evitar l’accés anònim tret que siga estrictament necessari.
-- Donar només els permisos mínims imprescindibles a cada usuari.
-- Emprar contrasenyes robustes i polítiques de caducitat de contrasenya.</p>
+- Fer còpies de seguretat abans de desplegar.
+- Utilitzar entorns de proves (staging) abans de producció.
+- Automatitzar els desplegaments amb scripts o eines d’integració contínua.</p>
 <hr/>
-<h2 id="4-modes-de-connexio-del-client">4. Modes de connexió del client</h2>
-<p>El protocol FTP utilitza dos canals: un de <strong>comandaments</strong> i un altre de <strong>dades</strong>. Açò provoca dues formes de connexió:</p>
+<h2 id="7-seguretat-en-el-servidor-daplicacions">7. Seguretat en el servidor d'aplicacions</h2>
+<p>Mesures essencials de seguretat:</p>
 <ul>
-<li><strong>Mode actiu:</strong> el client envia el port on escoltarà i el servidor inicia la connexió de dades cap al client. Pot donar problemes amb tallafocs.</li>
-<li><strong>Mode passiu:</strong> el servidor indica un port i el client inicia la connexió de dades. És el mode més utilitzat actualment per compatibilitat amb NAT i tallafocs.</li>
+<li>Actualitzar i aplicar pegats de seguretat del servidor.</li>
+<li>Configurar correctament rols, permisos i accés als recursos.</li>
+<li>Xifrar les comunicacions amb TLS/SSL.</li>
+<li>Auditar els logs d’accés i error regularment.</li>
+<li>Deshabilitar serveis o ports no utilitzats.</li>
+<li>Limitar els intents d’autenticació fallits.</li>
 </ul>
-<p><strong>Consell:</strong> configurar correctament el rang de ports passius i obrir-los al tallafocs del servidor.</p>
-<hr/>
-<h2 id="5-protocol-segur-de-transferencia-darxius">5. Protocol segur de transferència d'arxius</h2>
-<p>El trànsit FTP tradicional no està xifrat, cosa que permetria interceptar credencials o fitxers. Per això cal utilitzar protocols segurs:</p>
-<ul>
-<li><strong>FTPS:</strong> implementa TLS/SSL sobre FTP. Pot funcionar en mode explícit o implícit. Compatible amb clients FTP tradicionals.</li>
-<li><strong>SFTP:</strong> funciona sobre SSH. És més senzill de configurar i més segur, ja que tot el canal està xifrat.</li>
-<li><strong>Avantatges dels protocols segurs:</strong></li>
-<li>Protecció de les dades i les credencials.</li>
-<li>Eviten atacs de tipus “man-in-the-middle”.</li>
-<li>Autenticació robusta i possibilitat d’ús de claus públiques.</li>
-</ul>
-<p><strong>Bones pràctiques:</strong>
-- Deshabilitar FTP sense xifrat.
-- Obligar l’ús de FTPS o SFTP.
-- Configurar certificats vàlids i actualitzats.</p>
-<hr/>
-<h2 id="6-utilitzacio-de-comandes-i-deines-grafiques">6. Utilització de comandes i d'eines gràfiques</h2>
-<h3 id="eines-en-linia-de-comandes">Eines en línia de comandes</h3>
-<ul>
-<li><code>ftp</code> (bàsic), <code>sftp</code> (segur), <code>lftp</code> (avançat), <code>scp</code> (transferència ràpida via SSH).</li>
-<li>Comandes bàsiques:</li>
-<li><code>ls</code> (llistar fitxers)</li>
-<li><code>cd</code> (canviar de directori)</li>
-<li><code>get</code> / <code>mget</code> (baixar fitxers)</li>
-<li><code>put</code> / <code>mput</code> (pujar fitxers)</li>
-<li><code>bye</code> (tancar connexió)</li>
-</ul>
-<h3 id="eines-grafiques">Eines gràfiques</h3>
-<ul>
-<li>Clients amb interfície gràfica com FileZilla, WinSCP o Cyberduck.</li>
-<li>Permeten arrossegar i deixar fitxers, gestionar permisos i emmagatzemar credencials.</li>
-<li>Útils per a usuaris no tècnics o per transferències puntuals.</li>
-</ul>
-<hr/>
-<h2 id="7-utilitzacio-del-servei-de-transferencia-darxius-en-el-proces-de-desplegament-de-laplicacio-web">7. Utilització del servei de transferència d'arxius en el procés de desplegament de l'aplicació web</h2>
-<p>El servei FTP/SFTP és molt habitual per pujar aplicacions web a un servidor de producció:</p>
-<ul>
-<li>Transferir els fitxers HTML, CSS, JS i altres recursos al servidor web.</li>
-<li>Actualitzar versions noves de l’aplicació sense interrompre el servei.</li>
-<li>Automatitzar la pujada amb scripts (bash, PowerShell) o eines de CI/CD.</li>
-<li>Ajustar permisos i propietaris dels fitxers després de cada desplegament.</li>
-<li>Fer còpies de seguretat prèvies abans de substituir fitxers antics.</li>
-</ul>
-<p><strong>Avantatge:</strong> facilita un desplegament ràpid i directe, sense necessitat de coneixements avançats de DevOps.</p>
 <hr/>
 <h2 id="8-documentacio">8. Documentació</h2>
-<p>És essencial mantindre un registre clar i actualitzat del servei:</p>
+<p>És fonamental documentar tot el procés d’instal·lació, configuració i administració:</p>
 <ul>
-<li>Llistat d’usuaris amb els seus permisos i directoris assignats.</li>
-<li>Configuració actual del servidor (ports, directoris, seguretat, quotes…).</li>
-<li>Fitxers de configuració i les seues ubicacions.</li>
-<li>Procediments de connexió i transferència per als usuaris finals.</li>
-<li>Historial d’incidències i solucions aplicades.</li>
-<li>Ubicació i rotació dels fitxers de log.</li>
+<li>Versions de programari utilitzades.</li>
+<li>Configuracions aplicades i raons de les decisions.</li>
+<li>Procediments de desplegament i manteniment.</li>
+<li>Incidències trobades i com s’han resolt.</li>
+<li>Ubicació dels fitxers de configuració i logs.</li>
 </ul>
-<p><strong>Consell:</strong> guardar la documentació en un repositori Git per controlar versions i canvis.</p>
 <hr/>
-<h2 id="9-desplegament-de-servidors-de-transferencia-darxius-mitjancant-virtualitzacio-nuvol-i-contenidors">9. Desplegament de servidors de transferència d'arxius mitjançant virtualització, núvol i contenidors</h2>
-<p>Segons les necessitats, el servidor de transferència es pot desplegar en diferents entorns:</p>
+<h2 id="9-desplegament-de-servidors-daplicacions-mitjancant-virtualitzacio-nuvol-i-contenidors">9. Desplegament de servidors d'aplicacions mitjançant virtualització, núvol i contenidors</h2>
+<p>Hi ha diverses formes d’allotjar servidors d’aplicacions:</p>
 <h3 id="virtualitzacio-tradicional">Virtualització tradicional</h3>
 <ul>
-<li>Crear màquines virtuals a hipervisors com VMware, VirtualBox o Proxmox.</li>
-<li>Instal·lar-hi el servidor FTP/SFTP i configurar-lo com si fos un servidor físic.</li>
-<li>Permet aïllar entorns i realitzar snapshots per recuperar l’estat ràpidament.</li>
+<li>Crear màquines virtuals amb hipervisors (VMware, VirtualBox, Proxmox).</li>
+<li>Cada màquina té el seu propi sistema operatiu.</li>
 </ul>
 <h3 id="contenidors">Contenidors</h3>
 <ul>
-<li>Crear imatges lleugeres amb Docker o Podman que incloguen el servidor FTP/SFTP configurat.</li>
-<li>Llançar contenidors per a cada entorn (proves, producció).</li>
-<li>Avantatges: rapidesa de desplegament, consum mínim de recursos, portabilitat.</li>
+<li>Crear imatges lleugeres amb Docker o Podman.</li>
+<li>Llançar contenidors aïllats amb el servidor d’aplicacions.</li>
+<li>Avantatges: rapidesa, escalabilitat i portabilitat.</li>
 </ul>
 <h3 id="nuvol">Núvol</h3>
 <ul>
-<li>Utilitzar serveis gestionats de transferència d’arxius (AWS Transfer Family, Azure Blob amb SFTP…).</li>
-<li>No cal administrar infraestructura pròpia.</li>
-<li>Escalabilitat automàtica, alta disponibilitat i còpies de seguretat integrades.</li>
+<li>Plataformes com AWS, Azure o Google Cloud permeten desplegar servidors d’aplicacions gestionats.</li>
+<li>Integració amb balancejadors de càrrega, escalabilitat automàtica i alta disponibilitat.</li>
 </ul>
-<p><strong>Bones pràctiques generals:</strong>
-- Mantindre els sistemes actualitzats i amb pegats de seguretat.
-- Segregar els entorns (desenvolupament, proves, producció).
-- Automatitzar la creació i configuració amb scripts d’infraestructura com a codi (Terraform, Ansible…).</p>
+<p><strong>Bones pràctiques:</strong>
+- Automatitzar el desplegament amb fitxers de configuració (Dockerfile, docker-compose, Helm Charts...).
+- Utilitzar plantilles i imatges base segures i actualitzades.
+- Definir entorns separats (desenvolupament, proves, producció).</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

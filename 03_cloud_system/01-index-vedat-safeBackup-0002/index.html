@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
-<title>Administració de Servidors d'Aplicacions - Digitalització aplicada als sectors productius</title>
+<title>3. Cloud i sistemes connectats - Digitalització aplicada als sectors productius</title>
 <link href="../../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#administracio-de-servidors-daplicacions">
+<a class="md-skip" href="#3-cloud-i-sistemes-connectats">
           Salta el contingut
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Administració de Servidors d'Aplicacions
+              3. Cloud i sistemes connectats
             
           </span>
 </div>
@@ -158,6 +158,14 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01-index/">
+<span class="md-ellipsis">
+    3. Cloud i sistemes connectats
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -165,113 +173,76 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="administracio-de-servidors-daplicacions">Administració de Servidors d'Aplicacions</h1>
-<h2 id="1-arquitectura-i-configuracio-basica-del-servidor-daplicacions">1. Arquitectura i configuració bàsica del servidor d'aplicacions</h2>
-<p>Un servidor d’aplicacions és un programari que proporciona un entorn d’execució per a aplicacions web, gestionant la lògica de negoci, l’accés a dades i la comunicació entre clients i altres serveis.</p>
-<p><strong>Característiques principals:</strong>
-- Gestió del cicle de vida de les aplicacions.
-- Suport a diversos llenguatges i frameworks (Java, .NET, PHP...).
-- Connexió amb bases de dades i serveis externs.
-- Capacitat d’escalabilitat i alta disponibilitat.</p>
-<p><strong>Configuració bàsica:</strong>
-- Definició de ports i protocols de comunicació (HTTP/HTTPS).
-- Configuració de recursos (pools de connexions, memòria, llindars de CPU).
-- Rutes de desplegament i directoris d’aplicacions.
-- Fitxers de configuració (per exemple: <code>server.xml</code>, <code>domain.xml</code>).</p>
-<hr/>
-<h2 id="2-administrar-aplicacions-web">2. Administrar aplicacions web</h2>
-<p>Tasques habituals d’administració d’aplicacions web en el servidor d’aplicacions:</p>
+<h1 id="3-cloud-i-sistemes-connectats">3. Cloud i sistemes connectats</h1>
+<h2 id="1-introduccio-a-la-computacio-en-el-nuvol">1. Introducció a la computació en el núvol</h2>
+<p>La computació en el núvol representa un model tecnològic en què els recursos informàtics es proporcionen de manera remota a través d’Internet. Aquest paradigma es consolida gràcies a l’evolució dels sistemes centralitzats, a l’expansió de les xarxes distribuïdes i, sobretot, a la virtualització, que permet abstraure els recursos físics i convertir-los en serveis flexibles i escalables.</p>
+<p>La computació en el núvol ha transformat el funcionament dels sistemes digitals, ja que facilita l’accés sota demanda a capacitat de processament, emmagatzematge i eines de desenvolupament, tot amb un model de pagament per ús que millora l’eficiència i la rendibilitat empresarial.</p>
+<h2 id="2-models-de-nuvol-i-nivells-de-servei">2. Models de núvol i nivells de servei</h2>
+<p>Els serveis en el núvol es classifiquen en diferents nivells segons el grau d’abstracció proporcionat a l’usuari.</p>
+<h3 id="21-infrastructure-as-a-service-iaas">2.1. <em>Infrastructure as a Service</em> (IaaS)</h3>
+<p>En aquest model, el proveïdor ofereix infraestructura virtualitzada com servidors, xarxes i emmagatzematge. L’usuari manté el control del sistema operatiu i de les aplicacions que instal·la.  És adequat per a entorns que requereixen configuració específica o migració d’infraestructura física.</p>
+<h3 id="22-platform-as-a-service-paas">2.2. <em>Platform as a Service</em> (PaaS)</h3>
+<p>Proporciona una plataforma completa per desenvolupar i desplegar aplicacions sense gestionar la infraestructura subjacent.<br/>
+Inclou entorns d’execució, bases de dades integrades i escalat automàtic, facilitant el desenvolupament ràpid.</p>
+<h3 id="23-software-as-a-service-saas">2.3. <em>Software as a Service</em> (SaaS)</h3>
+<p>Ofereix aplicacions completes directament en el núvol, accessibles des del navegador.<br/>
+Les actualitzacions i el manteniment són centralitzats, cosa que redueix la càrrega tècnica local.</p>
+<h2 id="3-funcions-principals-del-nuvol-en-els-sistemes-digitals">3. Funcions principals del núvol en els sistemes digitals</h2>
+<p>La computació en el núvol permet dur a terme funcions essencials per als sistemes connectats moderns:</p>
 <ul>
-<li>Desplegar (pujar i activar) aplicacions empaquetades (<code>.war</code>, <code>.ear</code>, <code>.jar</code>).</li>
-<li>Actualitzar versions existents sense perdre dades ni configuracions.</li>
-<li>Monitoritzar l’estat i rendiment de les aplicacions.</li>
-<li>Aturar, reiniciar o eliminar aplicacions de manera segura.</li>
-<li>Gestionar dependències i biblioteques compartides.</li>
+<li><strong>Processament de dades</strong> de manera escalable i distribuïda.  </li>
+<li><strong>Intercanvi d’informació</strong> entre dispositius i usuaris de forma global.  </li>
+<li><strong>Execució d’aplicacions</strong> sense dependències de maquinari local.  </li>
+<li><strong>Gestió integrada de serveis</strong>, com monitoratge, seguretat i automatització.</li>
 </ul>
-<hr/>
-<h2 id="3-autenticacio-dusuaris-i-dominis-de-seguretat">3. Autenticació d'usuaris i dominis de seguretat</h2>
-<p>Els servidors d’aplicacions ofereixen mecanismes per validar i autoritzar usuaris:</p>
+<h2 id="4-edge-computing-i-la-seua-relacio-amb-el-nuvol">4. Edge computing i la seua relació amb el núvol</h2>
+<p>L’<strong>edge computing</strong> desplaça el processament i l’anàlisi de dades cap a la perifèria de la xarxa, on es generen les dades.<br/>
+Aquesta aproximació redueix la latència, disminueix el trànsit d’informació cap al núvol i millora la resposta en aplicacions sensibles al temps.</p>
+<p>Tot i això, l’<em>edge computing</em> no substitueix el núvol.  Ambdós models operen conjuntament: l’<em>edge</em> gestiona operacions immediates, mentre que el núvol realitza processament massiu, anàlisi complexa i emmagatzematge a llarg termini.</p>
+<h2 id="5-fog-i-mist-computing-extensions-de-ledge">5. Fog i mist computing: extensions de l’edge</h2>
+<h3 id="51-fog-computing">5.1. Fog computing</h3>
+<p>El <strong>fog computing</strong> introdueix una capa de processament intermèdia entre l’<em>edge</em> i el núvol.  Aquesta capa distribuïda gestiona fluxos massius de dades procedents de múltiples dispositius, redueix la latència i facilita la presa de decisions en temps quasi real.</p>
+<p>És habitual en entorns industrials, ciutats intel·ligents i xarxes àmplies de sensors IoT.</p>
+<h3 id="52-mist-computing">5.2. Mist computing</h3>
+<p>El <strong>mist computing</strong> s’ubica fins i tot més a prop del dispositiu final. El processament es realitza en microcontroladors o dispositius ultra lleugers, proporcionant respostes immediates i minimitzant el consum de recursos.</p>
+<p>Aquesta arquitectura és ideal per a dispositius IoT de molt baixa potència i sistemes que necessiten reaccions instantànies.</p>
+<h2 id="6-avantatges-del-nuvol-en-els-sistemes-connectats">6. Avantatges del núvol en els sistemes connectats</h2>
+<p>La integració del núvol aporta beneficis significatius:</p>
 <ul>
-<li>Autenticació bàsica (usuari/contrasenya), digest i formularis.</li>
-<li>Integració amb serveis d’identitat (LDAP, Active Directory).</li>
-<li>Definició de dominis o “realms” de seguretat per agrupar usuaris i rols.</li>
-<li>Assignació de permisos i rols per a recursos específics.</li>
+<li><strong>Escalabilitat</strong> dinàmica dels recursos.  </li>
+<li><strong>Alta disponibilitat</strong> gràcies a la redundància i distribució geogràfica.  </li>
+<li><strong>Reducció de costos</strong> en <em>hardware</em> i manteniment.  </li>
+<li><strong>Facilitat d’integració</strong> amb altres serveis i sistemes.  </li>
+<li><strong>Millores en seguretat i recuperació</strong> davant desastres.  </li>
+<li><strong>Rendibilitat empresarial</strong>, gràcies al pagament per ús i la flexibilitat operativa.</li>
 </ul>
-<hr/>
-<h2 id="4-administracio-de-sessions">4. Administració de sessions</h2>
-<p>La sessió representa l’estat de la interacció d’un usuari amb l’aplicació:</p>
+<h2 id="7-sintesi-final">7. Síntesi final</h2>
+<p>Els models de computació en el núvol —IaaS, PaaS i SaaS—, combinats amb arquitectures com l’edge, el fog i el mist computing, conformen un ecosistema tecnològic essencial per entendre els sistemes connectats actuals.</p>
+<p>Aquestes tecnologies distribueixen la càrrega de treball, optimitzen el processament de dades i incrementen l’eficiència global de les organitzacions modernes.</p>
+<h2 id="8-webgrafia">8. Webgrafia</h2>
 <ul>
-<li>Configurar el temps de vida d’una sessió.</li>
-<li>Almacenar dades de sessió en memòria o en bases de dades.</li>
-<li>Replicar sessions en entorns amb equilibradors de càrrega (cluster).</li>
-<li>Bona pràctica: minimitzar l’ús de sessió i evitar informació sensible.</li>
+<li>Susnjara, S., &amp; Smalley, I. (2025, 10 febrer). <em>What is cloud computing? - IBM</em>. Recuperat el 19 de novembre de 2025, de <a href="https://www.ibm.com/think/topics/cloud-computing">https://www.ibm.com/think/topics/cloud-computing</a></li>
 </ul>
-<hr/>
-<h2 id="5-cooperacio-amb-servidors-web">5. Cooperació amb servidors web</h2>
-<p>El servidor d’aplicacions pot treballar conjuntament amb un servidor web que actua com a frontal:</p>
-<ul>
-<li>Configurar el servidor web com a proxy invers (per ex. Nginx o Apache).</li>
-<li>Redirigir les peticions dinàmiques al servidor d’aplicacions.</li>
-<li>Servir contingut estàtic des del servidor web per millorar el rendiment.</li>
-<li>Compartir certificats SSL i gestionar el xifrat de connexions.</li>
-</ul>
-<hr/>
-<h2 id="6-desplegament-daplicacions-en-el-servidor-daplicacions">6. Desplegament d'aplicacions en el servidor d'aplicacions</h2>
-<p>Fases del desplegament:</p>
 <ol>
-<li>Preparar el paquet d’aplicació (<code>.war</code>, <code>.ear</code>, <code>.jar</code>).</li>
-<li>Pujar-lo al servidor via consola d’administració, CLI o scripts.</li>
-<li>Assignar els recursos necessaris (connexions a BD, variables d’entorn...).</li>
-<li>Verificar que el desplegament ha sigut correcte i l’aplicació respon.</li>
+<li>
+<p>IBM. (s. f.). <em>What is cloud computing?</em> IBM. Recuperat de https://www.ibm.com/topics/cloud-computing</p>
+</li>
+<li>
+<p>Microsoft. (s. f.). <em>Introduction to cloud computing</em>. Microsoft Learn. Recuperat de https://learn.microsoft.com</p>
+</li>
+<li>
+<p>Google Cloud. (s. f.). <em>What is cloud computing?</em> Google. Recuperat de https://cloud.google.com/learn/what-is-cloud-computing</p>
+</li>
+<li>
+<p>Red Hat. (s. f.). <em>What is edge computing?</em> Red Hat. Recuperat de https://www.redhat.com/en/topics/edge-computing</p>
+</li>
+<li>
+<p>Cisco. (s. f.). <em>Fog computing explained</em>. Cisco. Recuperat de https://www.cisco.com</p>
+</li>
+<li>
+<p>Khan Academy. (s. f.). <em>Internet 101: What is the Internet?</em> Khan Academy. Recuperat de https://www.khanacademy.org</p>
+</li>
 </ol>
-<p><strong>Bones pràctiques:</strong>
-- Fer còpies de seguretat abans de desplegar.
-- Utilitzar entorns de proves (staging) abans de producció.
-- Automatitzar els desplegaments amb scripts o eines d’integració contínua.</p>
-<hr/>
-<h2 id="7-seguretat-en-el-servidor-daplicacions">7. Seguretat en el servidor d'aplicacions</h2>
-<p>Mesures essencials de seguretat:</p>
-<ul>
-<li>Actualitzar i aplicar pegats de seguretat del servidor.</li>
-<li>Configurar correctament rols, permisos i accés als recursos.</li>
-<li>Xifrar les comunicacions amb TLS/SSL.</li>
-<li>Auditar els logs d’accés i error regularment.</li>
-<li>Deshabilitar serveis o ports no utilitzats.</li>
-<li>Limitar els intents d’autenticació fallits.</li>
-</ul>
-<hr/>
-<h2 id="8-documentacio">8. Documentació</h2>
-<p>És fonamental documentar tot el procés d’instal·lació, configuració i administració:</p>
-<ul>
-<li>Versions de programari utilitzades.</li>
-<li>Configuracions aplicades i raons de les decisions.</li>
-<li>Procediments de desplegament i manteniment.</li>
-<li>Incidències trobades i com s’han resolt.</li>
-<li>Ubicació dels fitxers de configuració i logs.</li>
-</ul>
-<hr/>
-<h2 id="9-desplegament-de-servidors-daplicacions-mitjancant-virtualitzacio-nuvol-i-contenidors">9. Desplegament de servidors d'aplicacions mitjançant virtualització, núvol i contenidors</h2>
-<p>Hi ha diverses formes d’allotjar servidors d’aplicacions:</p>
-<h3 id="virtualitzacio-tradicional">Virtualització tradicional</h3>
-<ul>
-<li>Crear màquines virtuals amb hipervisors (VMware, VirtualBox, Proxmox).</li>
-<li>Cada màquina té el seu propi sistema operatiu.</li>
-</ul>
-<h3 id="contenidors">Contenidors</h3>
-<ul>
-<li>Crear imatges lleugeres amb Docker o Podman.</li>
-<li>Llançar contenidors aïllats amb el servidor d’aplicacions.</li>
-<li>Avantatges: rapidesa, escalabilitat i portabilitat.</li>
-</ul>
-<h3 id="nuvol">Núvol</h3>
-<ul>
-<li>Plataformes com AWS, Azure o Google Cloud permeten desplegar servidors d’aplicacions gestionats.</li>
-<li>Integració amb balancejadors de càrrega, escalabilitat automàtica i alta disponibilitat.</li>
-</ul>
-<p><strong>Bones pràctiques:</strong>
-- Automatitzar el desplegament amb fitxers de configuració (Dockerfile, docker-compose, Helm Charts...).
-- Utilitzar plantilles i imatges base segures i actualitzades.
-- Definir entorns separats (desenvolupament, proves, producció).</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
