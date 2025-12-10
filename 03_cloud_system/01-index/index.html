@@ -232,6 +232,17 @@
       4. Edge computing i la seua relació amb el núvol
     </span>
 </a>
+<nav aria-label="4. Edge computing i la seua relació amb el núvol" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exemples">
+<span class="md-ellipsis">
+      Exemples
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#5-fog-i-mist-computing-extensions-de-ledge">
@@ -414,13 +425,48 @@ proves, la seguretat, i el desplegament.</p>
 <p>L’<strong>edge computing</strong> desplaça el processament i l’anàlisi de dades cap a la perifèria de la xarxa, on es generen les dades.<br/>
 Aquesta aproximació redueix la latència, disminueix el trànsit d’informació cap al núvol i millora la resposta en aplicacions sensibles al temps.</p>
 <p>Tot i això, l’<em>edge computing</em> no substitueix el núvol.  Ambdós models operen conjuntament: l’<em>edge</em> gestiona operacions immediates, mentre que el núvol realitza processament massiu, anàlisi complexa i emmagatzematge a llarg termini.</p>
+<h3 id="exemples">Exemples</h3>
+<h4 id="vehicles-autonoms-cotxes-de-tesla-waymo-cruise">Vehicles autònoms (cotxes de Tesla, Waymo, Cruise…)</h4>
+<p>Els vehicles autònoms generen <strong>terabytes de dades</strong> per hora provinents de càmeres, radar i LIDAR.
+Enviar tota aquesta informació al núvol seria massa lent i perillós, així que el processament es fa al mateix vehicle, és a dir, en el <em>edge</em>.</p>
+<p>El processar en l'<em>edge</em> és necessari en aquest cas perquè el temps de resposta ha de ser molt ràpid, mil·lisegons, per prendre decisions (frenar, accelerar, evitar obstacles). Es requerix menys dependència de la connexió a internet i millora la seguretat: les dades sensibles no ixen del cotxe.</p>
+<p>Gràcies a esta tecnologia el cotxe pot reaccionar immediatament, fins i tot sense cobertura, i es garanteix una conducció autònoma segura.</p>
+<h4 id="ciutats-intelligents-smart-cities-semafors-i-transit">Ciutats intel·ligents (<em>Smart Cities</em>) – Semàfors i trànsit</h4>
+<p>Moltes ciutats (Barcelona, Amsterdam, Singapur…) utilitzen dispositius <em>edge</em> en semàfors, càmeres i sensors de trànsit per analitzar en temps real els fluxos de vehicles i persones.</p>
+<p>Aquest dispositius permeten el recomptar de vehicles o vianants, la detecció d'embussos i la identificació de situacions de risc (accidents, retencions).</p>
+<p>La informació no s'envia al núvol perquè:</p>
+<ul>
+<li>es necessita decidir en temps real (variar la fase d’un semàfor no pot dependre d’un núvol llunyà).</li>
+<li>es redueix el cost en amplada de banda  (no cal enviar vídeo contínuament).</li>
+<li>cal protegir la privatitat de la ciutadania.</li>
+</ul>
+<p>Gràcies a esta tecnologia els  semàfors s'adapten automàticament segons el trànsit, reduint embussos i emissions.</p>
 <h2 id="5-fog-i-mist-computing-extensions-de-ledge">5. Fog i mist computing: extensions de l’edge</h2>
 <h3 id="51-fog-computing">5.1. Fog computing</h3>
 <p>El <strong>fog computing</strong> introdueix una capa de processament intermèdia entre l’<em>edge</em> i el núvol.  Aquesta capa distribuïda gestiona fluxos massius de dades procedents de múltiples dispositius, redueix la latència i facilita la presa de decisions en temps quasi real.</p>
 <p>És habitual en entorns industrials, ciutats intel·ligents i xarxes àmplies de sensors IoT.</p>
+<h4 id="arquitectura-tipica">Arquitectura típica</h4>
+<p>L'arquitectura típica és la següent:</p>
+<ol>
+<li>Sensors / IoT: generen dades contínuament.</li>
+<li>Capa Fog: <em>gateways</em>, <em>routers</em>, microdatacenters que processen parcialment.</li>
+<li>Cloud: anàlisi massiva, models IA, emmagatzematge de llarga duració.</li>
+</ol>
 <h3 id="52-mist-computing">5.2. Mist computing</h3>
 <p>El <strong>mist computing</strong> s’ubica fins i tot més a prop del dispositiu final. El processament es realitza en microcontroladors o dispositius ultra lleugers, proporcionant respostes immediates i minimitzant el consum de recursos.</p>
 <p>Aquesta arquitectura és ideal per a dispositius IoT de molt baixa potència i sistemes que necessiten reaccions instantànies.</p>
+<h4 id="per-que-existeix">Per què existeix?</h4>
+<p>Moltes aplicacions IoT no poden esperar ni tan sols al node fog. Necessiten:</p>
+<ul>
+<li>detecció immediata (alarma d’incendi, caiguda d’un pacient, frenada d’emergència),</li>
+<li>reduir dràsticament el volum de dades enviades.</li>
+</ul>
+<h4 id="exemples-tipics">Exemples típics</h4>
+<ul>
+<li><em>Wearables</em> mèdics: detecció immediata d'arrítmies.</li>
+<li>Sensors industrials: parada automàtica d’una màquina davant vibració anòmala.</li>
+<li>Dispositius <em>smart home</em>: reconeixement local de veu bàsic (activar llums, obrir porta).</li>
+</ul>
 <h2 id="6-avantatges-del-nuvol-en-els-sistemes-connectats">6. Avantatges del núvol en els sistemes connectats</h2>
 <p>La integració del núvol aporta beneficis significatius:</p>
 <ul>
@@ -443,6 +489,8 @@ Aquesta aproximació redueix la latència, disminueix el trànsit d’informaci�
 <li>Google Cloud. (s. f.). <em>What is cloud computing?</em> Google. Recuperat de <a href="https://cloud.google.com/learn/what-is-cloud-computing">https://cloud.google.com/learn/what-is-cloud-computing</a></li>
 <li>Red Hat. (s. f.). <em>What is edge computing?</em> Red Hat. Recuperat de <a href="https://www.redhat.com/en/topics/edge-computing">https://www.redhat.com/en/topics/edge-computing</a></li>
 <li>Cisco. (s. f.). <em>Fog computing explained</em>. Cisco. Recuperat de <a href="https://www.cisco.com">https://www.cisco.com</a></li>
+<li>Cameron, J. (2025, November 21). <em>Edge Computing in Transportation: Real-Time Efficiency and Safety</em>. SNUC. Recuperat el 5 de desembre de 2025 de <a href="https://snuc.com/blog/edge-computing-in-transportation">https://snuc.com/blog/edge-computing-in-transportation</a></li>
+<li>Arsys. (2024, July 6). <em>¿Cómo influirá el Edge Computing en el desarrollo de los coches autónomos?</em>. Recuperat el 5 de desembre de 2025 de  <a href="https://www.arsys.es/blog/edge-computing-coches-autonomos">https://www.arsys.es/blog/edge-computing-coches-autonomos</a></li>
 </ul>
 </article>
 </div>
